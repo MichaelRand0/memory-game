@@ -1,0 +1,26 @@
+.square {
+  &__info {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    p {
+      color: white;
+      font-size: 21px;
+      letter-spacing: 1px;
+    }
+  }
+  &__field {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.square__item {
+  background-color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 5px;
+  margin-top: 4px;
+  cursor: pointer;
+  transition: .2s ease-out background, .5s ease-in-out transform;
+  background-size: 43px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &[data-checked="true"] {
+    background-color: #3adf2f;
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+
+  &[data-checked="null"] {
+    &:hover {
+      background-color: darkorange;
+    }
+  }
+
+  &[data-checked="false"] {
+    background-color: red;
+  }
+
+  &[data-checked="visible"] {
+    background-color: darkorange;
+  }
+
+  &:not(:last-child) {
+    margin-right: 4px;
+  }
+}
