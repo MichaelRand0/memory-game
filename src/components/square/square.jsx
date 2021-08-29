@@ -138,6 +138,7 @@ export class Square extends React.Component {
   }
   render() {
     window.baf = this.state
+    const isMobileSize = window.innerWidth <= 768 || window.innerHeight <= 700 ? true : false
     const { squaresArr, attempts, isGuessing, record, level } = this.state
     let recordText = record ? `${record} уровень` : 'рекорд еще не установлен!'
     const { clickHandler } = this.props
@@ -150,9 +151,9 @@ export class Square extends React.Component {
       <div className="square">
         <button onClick={clickHandler} data-type="menu" className="menu__btn menu__btn_game">Выйти в меню</button>
         <div className="square__info">
-          <h1 style={record ? {color: 'darkorange'} : {color: 'white'}}>Твой рекорд: {recordText}</h1>
-          <p>Уровень: {level - 1}</p>
-          <p>Попыток: {attempts}</p>
+          {isMobileSize ? '' : <h1 className="square__info-title" style={record ? {color: 'darkorange'} : {color: 'white'}}>Твой рекорд: {recordText}</h1>}
+          <p className="square__info-text">Уровень: {level - 1}</p>
+          <p className="square__info-text">Попыток: {attempts}</p>
         </div>
         <div className="square__field">
           <div style={{ maxWidth: squareWrapperWidth ? squareWrapperWidth : '' }} className="square__field-wrapper">

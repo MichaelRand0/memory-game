@@ -16,8 +16,11 @@
 
   &[data-checked="null"] {
     cursor: pointer;
-    &:hover {
-      background-color: darkorange;
+
+    @media(min-width: 1100px) {
+      &:hover {
+        background-color: darkorange;
+      }
     }
   }
 
