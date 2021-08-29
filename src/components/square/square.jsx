@@ -19,6 +19,7 @@ export class Square extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   initArr() {
+    window.state = this.state
     const { level, difficult } = this.state
     const squaresLength = level * level
     let newArr = []
@@ -137,12 +138,12 @@ export class Square extends React.Component {
   }
   render() {
     window.baf = this.state
-    const { squaresArr, attempts, record, level } = this.state
+    const { squaresArr, attempts, isGuessing, record, level } = this.state
     let recordText = record ? `${record} уровень` : 'рекорд еще не установлен!'
     const { clickHandler } = this.props
     const squareWrapperWidth = 60 * squaresArr.length / Math.sqrt(squaresArr.length)
     const squaresElements = squaresArr.map((square, i) => {
-      return <SquareItem clickHandler={this.handleClick} checked={square.checked} id={square.id} key={i} />
+      return <SquareItem isGuessing={isGuessing} clickHandler={this.handleClick} checked={square.checked} id={square.id} key={i} />
     })
 
     return (

@@ -4,7 +4,6 @@
   height: 56px;
   border-radius: 5px;
   margin-top: 4px;
-  cursor: pointer;
   transition: .2s ease-out background, .5s ease-in-out transform;
   background-size: 43px;
   background-repeat: no-repeat;
@@ -16,6 +15,7 @@
   }
 
   &[data-checked="null"] {
+    cursor: pointer;
     &:hover {
       background-color: darkorange;
     }
